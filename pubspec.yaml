@@ -1,0 +1,52 @@
+name: lanternet_open_ai
+description: lanternet open ai app
+
+version: 1.0.3+4
+publish_to: none
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.3
+  flutter_svg: ^2.0.5 # help us to use SVG in our app
+  http: ^0.13.4
+  dio: ^5.1.1
+  shared_preferences: ^2.1.0
+  persian: ^1.2.0
+  persian_number_utility: ^1.1.3
+  persian_datetime_picker: ^2.5.0
+  tapsell_plus: ^2.1.7
+  swipe_refresh: ^1.0.2
+  url_launcher_android: ^6.0.33
+  jo_loading:
+    git:
+      url: https://github.com/jalalonagh/jo_loading.git
+  jo_body:
+    git:
+      url: https://github.com/jo-flutter-packages/jo_body.git
+  jo_buttons:
+      git:
+        url: https://github.com/jo-flutter-packages/jo_buttons.git
+        version: ^0.0.2
+  jo_cafebazaar_widgets:
+    git:
+      url: https://github.com/jo-flutter-packages/jo_cafebazaar_widgets.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+  fonts:
+    - family: iransans
+      fonts:
+        - asset: fonts/iransans.ttf
