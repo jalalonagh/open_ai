@@ -7,5 +7,5 @@ class CafeBazaarConfig {
 
 class MyketConfig {
   static String packageName = "ir.lanternet.openai";
-  static String developerId = "419410851986";
+  static String developerId = "dev-70233";
 }

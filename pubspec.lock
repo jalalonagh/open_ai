@@ -145,6 +145,15 @@ packages:
       url: "https://github.com/jo-flutter-packages/jo_body.git"
     source: git
     version: "0.0.3"
+  jo_bottom_navigation:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: b507dc1c6067072e14a1a46efc50b0c0154d239c
+      url: "https://github.com/jo-flutter-packages/jo_bottom_navigation.git"
+    source: git
+    version: "0.0.2"
   jo_buttons:
     dependency: "direct main"
     description:
@@ -152,15 +161,6 @@ packages:
       ref: HEAD
       resolved-ref: "4e29fc87c1959e646902a04a6c9e68c7d37c98cf"
       url: "https://github.com/jo-flutter-packages/jo_buttons.git"
-    source: git
-    version: "0.0.2"
-  jo_cafebazaar_widgets:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: c94f6bd70fb883d10b801c75fa011986f6fa7c79
-      url: "https://github.com/jo-flutter-packages/jo_cafebazaar_widgets.git"
     source: git
     version: "0.0.2"
   jo_loading:
@@ -172,6 +172,15 @@ packages:
       url: "https://github.com/jalalonagh/jo_loading.git"
     source: git
     version: "0.0.1"
+  jo_publishing_platform_features:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "2ecb2cde4ffbd7c280e1d2a31292a7950fc32f6b"
+      url: "https://github.com/jo-flutter-packages/jo_cafebazaar_widgets.git"
+    source: git
+    version: "0.0.4"
   js:
     dependency: transitive
     description:
@@ -554,5 +563,5 @@ packages:
     source: hosted
     version: "6.3.0"
 sdks:
-  dart: ">=3.0.0 <4.0.0"
+  dart: ">=3.0.5 <4.0.0"
   flutter: ">=3.7.0-0"

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:jo_body/jo_body.dart';
+import 'package:jo_bottom_navigation/jo_navigation_item.dart';
 import 'package:jo_buttons/jo_buttons.dart';
+import 'package:lanternet_open_ai/main.dart';
 import '../../bases/Controller/Service/UserServiceV2.dart';
-import '../../components/generals/app/navigation/jo_navigation.dart';
-import '../../constans/config.dart';
-import '../../main.dart';
 import '../chat/jo_page_chat.dart';
 import '../image/jo_page_image.dart';
-import 'package:jo_cafebazaar_widgets/jo_cafebazaar_widgets.dart';
+import 'package:jo_bottom_navigation/jo_bottom_navigation.dart';
 
 class JOPageHome extends StatefulWidget {
   const JOPageHome({Key? key}) : super(key: key);
@@ -55,30 +54,40 @@ class _JOPageHomeState extends State<JOPageHome> {
             },
           ),
           SizedBox(height: 50.0),
-          Container(
-            margin: EdgeInsets.all(10.0),
-            child: InkWell(
-              child: Text("به ما با امتیاز دادن کمک کنید ."),
-              onTap: () {
-                myket.makeCommentToApp();
-                cafe.makeCommentToApp();
-              },
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10.0),
-            child: InkWell(
-              child: Text("از سایر محصولات ما دیدن بفرمائید."),
-              onTap: () {
-                myket.getMyOtherApps();
-                cafe.getMyOtherApps();
-              },
-            ),
-          ),
         ],
       ),
       inProgress: inProgress,
-      bottomNavigation: JONavigation(),
+      bottomNavigation: JOBottomNavigation(
+        items: [
+          JOBottomNavigationItem(
+            icon: Icons.home_outlined,
+            route: "/jo_page_home",
+            callback: () {
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+          JOBottomNavigationItem(
+            icon: Icons.star_rounded,
+            callback: () {
+              platform.makeCommentToApp();
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+          JOBottomNavigationItem(
+            icon: Icons.apps_rounded,
+            callback: () {
+              platform.getMyOtherApps();
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+        ],
+      ),
     );
   }
 }

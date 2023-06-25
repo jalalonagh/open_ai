@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jo_body/jo_body.dart';
-import 'package:jo_loading/jo_loading.dart';
+import 'package:jo_bottom_navigation/jo_bottom_navigation.dart';
+import 'package:jo_bottom_navigation/jo_navigation_item.dart';
 import 'package:lanternet_open_ai/bases/Model/chat_gpt/image_gpt_dto.dart';
 import 'package:lanternet_open_ai/bases/viewModels/chat_gpt/image_gpt_result.dart';
 import 'package:lanternet_open_ai/components/generals/app/form/jo_text_field.dart';
@@ -10,6 +11,8 @@ import '../../bases/Controller/Service/UserServiceV2.dart';
 import '../../bases/Controller/Service/chat_gpt_service.dart';
 import '../../components/generals/app/page/detail/jo_page_detail_bank_description.dart';
 import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
+
+import '../../main.dart';
 
 class JOPageImage extends StatefulWidget {
   JOPageImage({
@@ -116,6 +119,37 @@ class _JOPageImageState extends State<JOPageImage> {
           enabled: true,
         ),
       ],
+      bottomNavigation: JOBottomNavigation(
+        items: [
+          JOBottomNavigationItem(
+            icon: Icons.home_outlined,
+            route: "/jo_page_home",
+            callback: () {
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+          JOBottomNavigationItem(
+            icon: Icons.star_rounded,
+            callback: () {
+              platform.makeCommentToApp();
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+          JOBottomNavigationItem(
+            icon: Icons.apps_rounded,
+            callback: () {
+              platform.getMyOtherApps();
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+        ],
+      ),
     );
   }
 

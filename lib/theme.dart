@@ -12,6 +12,7 @@ ThemeData theme() {
     fontFamily: "iransans",
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),
+    iconButtonTheme: iconButtonTheme().data,
     inputDecorationTheme: inputDecorationTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     buttonTheme: ButtonThemeData(),
@@ -90,5 +91,17 @@ AppBarTheme appBarTheme() {
     titleTextStyle: TextTheme(
       titleLarge: FontLightStyle().textStyle,
     ).titleLarge,
+  );
+}
+
+IconButtonTheme iconButtonTheme() {
+  return IconButtonTheme(
+    data: IconButtonThemeData(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(EdgeInsets.all(0.0)),
+        iconSize: MaterialStateProperty.all(30.0),
+      ),
+    ),
+    child: Icon(Icons.abc),
   );
 }

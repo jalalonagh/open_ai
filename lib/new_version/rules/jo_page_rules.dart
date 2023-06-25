@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jo_body/jo_body.dart';
-
-import '../../bases/Controller/Service/UserServiceV2.dart';
+import 'package:jo_bottom_navigation/jo_bottom_navigation.dart';
+import 'package:jo_bottom_navigation/jo_navigation_item.dart';
 import '../../components/generals/app/form/jo_justify_normal_text.dart';
+import '../../main.dart';
 
 class JOPageRules extends StatefulWidget {
   const JOPageRules({Key? key}) : super(key: key);
@@ -65,6 +66,37 @@ class _JOPageRulesState extends State<JOPageRules> {
         ),
       ),
       inProgress: inProgress,
+      bottomNavigation: JOBottomNavigation(
+        items: [
+          JOBottomNavigationItem(
+            icon: Icons.home_outlined,
+            route: "/jo_page_home",
+            callback: () {
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+          JOBottomNavigationItem(
+            icon: Icons.star_rounded,
+            callback: () {
+              platform.makeCommentToApp();
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+          JOBottomNavigationItem(
+            icon: Icons.apps_rounded,
+            callback: () {
+              platform.getMyOtherApps();
+              setState(() {});
+            },
+            visible: true,
+            enable: true,
+          ),
+        ],
+      ),
     );
   }
 }

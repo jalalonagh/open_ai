@@ -1,19 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:jo_cafebazaar_widgets/jo_cafebazaar_widgets.dart';
+import 'package:jo_publishing_platform_features/contracts/platforms_enum.dart';
+import 'package:jo_publishing_platform_features/jo_publishing_platform.dart';
 import 'package:lanternet_open_ai/routes.dart';
 import 'package:lanternet_open_ai/theme.dart';
 import 'package:tapsell_plus/tapsell_plus.dart';
 import 'constans/config.dart';
 import 'new_version/home/jo_page_home.dart';
 
-CafeBazaar cafe = CafeBazaar(
-    developerId: CafeBazaarConfig.developerId,
-    packageName: CafeBazaarConfig.packageName);
-
-Myket myket = Myket(
-    developerId: MyketConfig.developerId, packageName: MyketConfig.packageName);
+JOPublishingPlatform platform = JOPublishingPlatform(
+  platform: Platforms.Myket,
+  developerId: MyketConfig.developerId,
+  packageName: MyketConfig.packageName,
+);
 
 Random adsRandom = Random();
 const appId =

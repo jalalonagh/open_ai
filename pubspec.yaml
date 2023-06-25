@@ -1,7 +1,7 @@
 name: lanternet_open_ai
 description: lanternet open ai app
 
-version: 1.0.3+4
+version: 1.0.4+5
 publish_to: none
 
 environment:
@@ -32,9 +32,12 @@ dependencies:
       git:
         url: https://github.com/jo-flutter-packages/jo_buttons.git
         version: ^0.0.2
-  jo_cafebazaar_widgets:
+  jo_publishing_platform_features:
     git:
       url: https://github.com/jo-flutter-packages/jo_cafebazaar_widgets.git
+  jo_bottom_navigation:
+    git:
+      url: https://github.com/jo-flutter-packages/jo_bottom_navigation.git
 
 dev_dependencies:
   flutter_test:
